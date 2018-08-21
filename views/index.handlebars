@@ -1,9 +1,15 @@
-<h1>Burgers!</h1>
+<h1>Come and Get UR Burgers!</h1>
 
-<h2>Cats that are not sleepy!</h2>
+<h2>Newly Available!</h2>
 
-<ul>
-  {{#each cats}}
+<li>
+	{{name}}
+	</button>
+	<button class="delete-burger" data-id="{{this.id}}">Devour IT!</button>
+</li>
+
+{{!-- <ul>
+  {{#each burger}}
     {{#unless devoured}}
       {{> burger/devoured=true}}}
     {{/unless}}
@@ -18,9 +24,9 @@
       {{> burger/devoured=false}}
     {{/if}}
   {{/each}}
-</ul>
+</ul> --}}
 
-<h2>Add a Burger</h2>
+<h2>Place an Order</h2>
 <form class="create-form">
 
   <div class="form-group">
@@ -30,3 +36,7 @@
 
   <button type="submit">Add Burger</button>
 </form>
+
+
+
+
