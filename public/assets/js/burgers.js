@@ -22,7 +22,7 @@ $(document).ready(function() {
       event.preventDefault();
   
       var newBurger = {
-        name: $("#ca").val().trim(),
+        name: $("#name").val().trim(),
       };
   
       // Send the POST request.
