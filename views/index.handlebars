@@ -3,21 +3,21 @@
 <h2>Newly Available!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each this.burgers}}
     {{#unless devoured}}
+      <li>
+      {{this.burger_name}}
+        </button>
+        <button class="delete-burger" data-id="{{this.id}}">Devour IT!  
+        </button>
+      </li>
     {{/unless}}
   {{/each}}
 </ul>
 
-<li>
-  {{this.burger_name}}
-  </button>
-  <button class="delete-burger" data-id="{{this.id}}">Devour IT!</button>
-</li>
-
 <h2>Place an Order</h2>
 <ul>
-  {{#each burgers}}
+  {{#each this.burgers}}
     {{#if devoured}}
     {{/if}}
   {{/each}}
@@ -31,3 +31,4 @@
       </div>
     
       <button type="submit">Add Burger</button>
+</form>

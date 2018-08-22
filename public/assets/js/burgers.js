@@ -1,22 +1,21 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+$(document).ready(function() {
     
+      // var newFood = {
+      //   name: ,
+      // };
   
-      var newFood = {
-        item: newItem
-      };
-  
-      // Send the PUT request.
-      $.ajax("/api/burgers/" + id, {
-        type: "PUT",
-        data: newFood
-      }).then(
-        function() {
-          console.log("added new Item", newItem);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
+      // // Send the PUT request.
+      // $.ajax("/api/burgers/" + id, {
+      //   type: "PUT",
+      //   data: newFood
+      // }).then(
+      //   function() {
+      //     console.log("added new Item", item);
+      //     // Reload the page to get the updated list
+      //     location.reload();
+      //   }
+      // );
   
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
@@ -27,8 +26,9 @@ $(function() {
       };
   
       // Send the POST request.
-      $.ajax("/api/burgers", {
+      $.ajax({
         type: "POST",
+        url: "/burgers",
         data: newBurger
       }).then(
         function() {
@@ -43,7 +43,7 @@ $(function() {
       var id = $(this).data("id");
   
       // Send the DELETE request.
-      $.ajax("/api/burgers/" + id, {
+      $.ajax("/burgers/:" + id, {
         type: "DELETE"
       }).then(
         function() {
@@ -54,4 +54,6 @@ $(function() {
       );
     });
   });
+
+
   
